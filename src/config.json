@@ -1,0 +1,14 @@
+{
+    "WeatherSettings": {
+        "TemperatureModes": ["K", "F", "C"],
+        "SelectedMode": "K"
+    },
+    "TimeSettings": {
+        "TimeModes": ["24HR", "12HR"],
+        "SelectedMode": "12HR"
+    },
+    "LocationSettings": {
+        "Zip": "19031",
+        "Country": "US"
+    }
+}
