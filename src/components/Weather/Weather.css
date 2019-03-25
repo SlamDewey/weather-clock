@@ -1,45 +1,49 @@
-:root {
-    --weather-panel-width: 60%;
-}
-
 .weather-container {
-    width: var(--weather-panel-width);
+    width: 100%;
     height: 100%;
-    float: right;
 }
 .weather-attrib {
     background-color: orange;
 }
-.cond-desc-container {
-    position: relative;
+
+.weather-attrib#temperature {
     width: 100%;
-}
-.weather-attrib#conditions, .weather-attrib#description {
+    padding-top: 5%;
+    
     text-align: center;
-}
-.weather-attrib#conditions {
-    position: absolute;
-    float: left;
-    width: calc(var(--weather-panel-width) * 0.75);
-    top: 0px;
-}
-.weather-attrib#icon {
-    position: absolute;
-    float: right;
-    width: calc(var(--weather-panel-width) * 0.35);
-    top: 0px;
-    right: 0px;
+    font-size: 10vw;
 }
 .weather-attrib#details {
-    position: absolute;
-    top: 50%;
+    text-align: center;
+    font-size: 2vw;
 }
-.weather-attrib#location {
-    width: var(--weather-panel-width);
-    position: absolute;
-    height: 5%;
-    bottom: 40%;
+
+@keyframes icon-motion {
+    0% {left: 15%;}
+    50% {left: 35%;}
+    100% {left: 15%;}
 }
 .weather-icon img{
+    position: relative;
+    
+    width: 50%;
+    height: 50%;
+    
     filter: invert(100%);
+    animation-name: icon-motion;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@media screen and (max-width: 800px) {
+    .weather-attrib#temperature {
+        font-size: 20vw;
+    }
+    .weather-attrib#details {
+        font-size: 5vw;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .weather-attrib#temperature {
+        font-size: 10em;
+    }
 }

@@ -52,7 +52,7 @@ class Weather extends Component {
         const temp_mode = this.TempMode();
         switch(temp_mode) {
             case "K":
-                return temp;
+                return temp.toFixed(0);
             case "°F":
                 return ((temp - 273.15) * (9/5) + (32)).toFixed(0);
             case "°C":
@@ -89,17 +89,15 @@ class Weather extends Component {
         return (
             <div className="weather-container">
                 <div className="weather-attrib-container">
-                    <div className="weather-attrib" id="conditions">
-                        <div id="large-font">{this.parse_temp(temperature)}{temp_mode}</div>
+                    <div className="weather-attrib" id="temperature">
+                        {this.parse_temp(temperature)}{temp_mode}
                     </div>
                     <div className="weather-attrib" id="icon">
                         {this.getWeatherImage(icon_id)}
                     </div>
                     <div className="weather-attrib" id="details">
                         Humidity: {humidity}% ----- {description}
-                    </div>
-                    <br />
-                    <div className="weather-attrib" id="location">
+                        <br />
                         {city}, {country}
                     </div>
                 </div>
@@ -108,7 +106,7 @@ class Weather extends Component {
     }
 
     MakeImgComponent(url, alt, width, height) {
-        if (!width || !height) width = height = '100%';
+        if (!width || !height) width = height = '50%';
         return (
             <div className="weather-icon">
                 <img src={url} alt={alt} width={width} height={height} />

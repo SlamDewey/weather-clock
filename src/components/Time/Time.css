@@ -1,25 +1,34 @@
-:root {
-    --time-panel-width: 40%;
-}
-
 .time-container {
-    width: var(--time-panel-width);
+    width: 100%;
     height: 100%;
-    float: left;
-
     text-align: center;
 }
 .display-container {
-    width: var(--time-panel-width);
-    position: absolute;
-    top: calc(var(--content-height) / 2);
+    width: 100%;
     color: white;
+    margin-top: 10vw;
 }
 .time-display {
-    background-color: #333333;
-    font-size: 6em;
+    background-color: var(--light-background-color);
+    font-size: 15vw;
 }
 .date-display {
-    background-color: #3f3f3f;
-    font-size: 1.5em;
+    background-color: var(--highlight-background-color);
+    font-size: 5vw;
+}
+@media screen and (max-width: 800px) {
+    .display-container {
+        margin-top: 0;
+    }
+    .time-display {
+        font-size: 20vw;
+    }
+}
+@media screen and (min-width: 1800px) {
+    .time-display {
+        font-size: 16em;
+    }
+    .date-display {
+        font-size: 4em;
+    }
 }

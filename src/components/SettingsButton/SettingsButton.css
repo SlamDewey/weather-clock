@@ -1,0 +1,44 @@
+:root {
+    --menu-line-spacing: 6px;
+}
+
+.sbcont {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 15px;
+    padding: 10px;
+    background-color: var(--highlight-background-color);
+}
+.sbcont:hover .bar1 {
+    transform: rotateZ(90deg) translate(11px, 15px);
+}
+.sbcont:hover .bar2 {
+    transform: rotateZ(90deg);
+}
+.sbcont:hover .bar3 {
+    transform: rotateZ(90deg) translate(-11px, -15px);
+}
+.sbcont a {
+    margin: 0;
+    text-decoration: none;
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: white;
+    width: 35px;
+    height: 5px;
+    transition: 0.3s;
+}
+.bar1 {
+    margin-top: 0px;
+    margin-bottom: var(--menu-line-spacing);
+}
+.bar2 {
+    margin-top: var(--menu-line-spacing);
+    margin-bottom: var(--menu-line-spacing);
+}
+.bar3 {
+    margin-top: var(--menu-line-spacing);
+    margin-bottom: 0px;
+}

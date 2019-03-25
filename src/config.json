@@ -5,7 +5,8 @@
     },
     "TimeSettings": {
         "TimeModes": ["24HR", "12HR"],
-        "SelectedMode": "12HR"
+        "SelectedMode": "12HR",
+        "Alarms": [{"h": 9, "m": 0}, {"h": 9, "m": 5}]
     },
     "LocationSettings": {
         "Zip": "19031",

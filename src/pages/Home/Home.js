@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Weather from '../../components/Weather/Weather';
 import Time from '../../components/Time/Time';
+import SettingsButton from '../../components/SettingsButton/SettingsButton';
 
 import config from '../../config.json';
 
@@ -16,9 +17,18 @@ class Home extends Component {
         const loc = this.Location();
         const zip = loc[0], country = loc[1];
         return (
-            <div className="content">
-                <Weather zip={zip} country={country} />
-                <Time zip={zip} country={country} />
+            <div className="home">
+                <div className="content">
+                    <div className="content-column" id="time">
+                        <Time zip={zip} country={country} />
+                    </div>
+                    <div className="content-column" id="weather">
+                        <Weather zip={zip} country={country} />
+                    </div>
+                </div>
+                <div className="settings">
+                    <SettingsButton />
+                </div>
             </div>
         );
     }

@@ -1,22 +1,52 @@
 :root {
     --background-color: #1f1f1f;
+    --light-background-color: #333333;
+    --highlight-background-color: #3f3f3f;
+
     --content-height: 80%;
+    --settings-height: 20%;
+
+    --time-panel-width: 60%;
+    --weather-panel-width: 40%;
 }
 
 html, body, div#root{
     margin: 0;
     background-color: var(--background-color);
-    height: 100% !important;
-    width: 100% !important;
+    height: 100%;
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* container for content and settings */
+.home {}
 
 .content {
     position: relative;
     height: var(--content-height);
-    display: block;
+    width: 100%;
 }
-
-div#large-font {
-    font-size: 9em;
+.content-column {
+    float: left;
+}
+.content-column#time {
+    width: var(--time-panel-width);
+}
+.content-column#weather {
+    width: var(--weather-panel-width);
+}
+.content:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+@media screen and (max-width: 800px) {
+    .content-column#time, .content-column#weather{
+      width: 100%;
+    }
+}
+.settings {
+    position: relative;
+    height: var(--settings-height);
+    width: 10%;
+    min-width: 100px;
 }
