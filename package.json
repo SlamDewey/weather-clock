@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://slamdewey.github.io/weather-clock/",
   "dependencies": {
+    "domurl": "^2.2.0",
     "gh-pages": "^2.0.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",

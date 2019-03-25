@@ -1,0 +1,11 @@
+.settings-content a{
+    margin: 0;
+    text-decoration: none;
+}
+
+.back-button {
+    width: auto;
+    color: white;
+    background-color: red;
+    padding: 30px;
+}

@@ -11,13 +11,13 @@
     background-color: var(--highlight-background-color);
 }
 .sbcont:hover .bar1 {
-    transform: rotateZ(90deg) translate(11px, 15px);
+    transform: translate(15px, 11px) rotateZ(90deg);
 }
 .sbcont:hover .bar2 {
     transform: rotateZ(90deg);
 }
 .sbcont:hover .bar3 {
-    transform: rotateZ(90deg) translate(-11px, -15px);
+    transform: translate(-15px, -11px) rotateZ(90deg);
 }
 .sbcont a {
     margin: 0;

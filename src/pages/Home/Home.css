@@ -44,9 +44,21 @@ html, body, div#root{
       width: 100%;
     }
 }
-.settings {
-    position: relative;
+.bottom-panel {
     height: var(--settings-height);
-    width: 10%;
-    min-width: 100px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.copyright {
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+
+    background-color: var(--light-background-color);
+    
+    color: hsl(0, 0%, 58%);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    text-align: center;
 }

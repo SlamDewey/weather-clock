@@ -26,8 +26,11 @@ class Home extends Component {
                         <Weather zip={zip} country={country} />
                     </div>
                 </div>
-                <div className="settings">
-                    <SettingsButton />
+                <div className="bottom-panel">
+                    <SettingsButton href={"settings"} />
+                </div>
+                <div className="copyright">
+                    Copyright {'\u00A9'} 2019 Jared Massa
                 </div>
             </div>
         );
