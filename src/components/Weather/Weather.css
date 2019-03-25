@@ -1,0 +1,14 @@
+.weather-container {
+    background-color: blue;
+    padding: 5px;
+    width: 40%;
+    float: right;
+    margin-right: 5%;
+}
+.weather-attrib {
+    background-color: orange;
+    margin: 5px;
+}
+.weather-icon img{
+    filter: invert(100%);
+}

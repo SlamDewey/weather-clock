@@ -1,0 +1,17 @@
+:root {
+    --background-color: #1f1f1f;
+    --innerHeight: 0px;
+    --innerWidth: 0px;
+}
+
+html, body, div#root{
+    margin: 0;
+    background-color: var(--background-color);
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.content {
+    background-color: red;
+    height: 30%;
+}

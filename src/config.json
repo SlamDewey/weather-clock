@@ -1,6 +1,6 @@
 {
     "WeatherSettings": {
-        "TemperatureModes": ["K", "F", "C"],
+        "TemperatureModes": ["K", "°F", "°C"],
         "SelectedMode": "K"
     },
     "TimeSettings": {
