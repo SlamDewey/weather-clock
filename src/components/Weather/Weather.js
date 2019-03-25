@@ -118,11 +118,13 @@ class Weather extends Component {
     
     //map API icon_id to local image files for weather visualization
     getWeatherImage(icon_id) {
+        var hours = (new Date()).getHours();
+        var dn = (hours < 20 && hours > 5)? "d" : "n";
         if (icon_id < 233) {    //200-232
             return this.MakeImgComponent("weather_img/200-232.svg");
         } else if (icon_id < 322) { //300-321
             if (icon_id === 300)
-                return this.MakeImgComponent("weather_img/300d.svg");
+                return this.MakeImgComponent("weather_img/300" + dn + ".svg");
             else if (icon_id === 301)
                 return this.MakeImgComponent("weather_img/301.svg");
             else if (icon_id === 314 || icon_id === 321)
@@ -130,7 +132,7 @@ class Weather extends Component {
             else return this.MakeImgComponent("weather_img/302 310 311 312 313.svg");
         } else if (icon_id < 532) { //500-531
             if (icon_id === 500)
-                return this.MakeImgComponent("weather_img/500d.svg");
+                return this.MakeImgComponent("weather_img/500" + dn + ".svg");
             else if (icon_id === 501)
                 return this.MakeImgComponent("weather_img/501.svg");
             else if (icon_id === 502 || icon_id === 531)
@@ -143,13 +145,13 @@ class Weather extends Component {
                 return this.MakeImgComponent("weather_img/520 521.svg");
         } else if (icon_id < 623) { //600-622
             if (icon_id === 600)
-                return this.MakeImgComponent("weather_img/600d.svg");
+                return this.MakeImgComponent("weather_img/600" + dn + ".svg");
             else if (icon_id === 601 || icon_id === 602)
                 return this.MakeImgComponent("weather_img/601 602.svg");
             else if (icon_id === 611 || icon_id === 615 || icon_id === 616 || icon_id === 620)
                 return this.MakeImgComponent("weather_img/611 615 616 620.svg");
             else if (icon_id === 612 || icon_id === 613)
-                return this.MakeImgComponent("weather_img/612 613d.svg");
+                return this.MakeImgComponent("weather_img/612 613" + dn + ".svg");
             else if (icon_id === 621 || icon_id === 622)
                 return this.MakeImgComponent("weather_img/621 622.svg");
             else if (icon_id === 520 || icon_id === 521)
@@ -167,9 +169,9 @@ class Weather extends Component {
                 return this.MakeImgComponent("weather_img/781.svg");
         } else if (icon_id < 805) { //800-804
             if (icon_id === 800)
-                return this.MakeImgComponent("weather_img/800d.svg");
+                return this.MakeImgComponent("weather_img/800" + dn + ".svg");
             else if (icon_id === 801 || icon_id === 802)
-                return this.MakeImgComponent("weather_img/801 802d.svg");
+                return this.MakeImgComponent("weather_img/801 802" + dn + ".svg");
             else if (icon_id === 803 || icon_id === 804)
                 return this.MakeImgComponent("weather_img/803 804.svg");
         }
