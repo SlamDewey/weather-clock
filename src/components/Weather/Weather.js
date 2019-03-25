@@ -88,13 +88,15 @@ class Weather extends Component {
         }
         return (
             <div className="weather-container">
-                <div className="weather-attrib" id="conditions" style={{display: 'inline-flex'}}>
+                <div className="weather-attrib" id="conditions">
                     {this.parse_temp(temperature)} {temp_mode}
                     <br />
                     Humidity: {humidity}%
                 </div>
-                <div className="weather-attrib" id="description" style={{display: 'inline-flex'}}>
-                    {description} {this.getWeatherImage(icon_id)}
+                <div className="weather-attrib" id="description">
+                    {this.getWeatherImage(icon_id)}
+                    <br />
+                    {description}
                 </div>
                 <div className="weather-attrib" id="location">
                     {city}, {country}
@@ -111,6 +113,7 @@ class Weather extends Component {
             </div>
         );
     }
+    
     //map API icon_id to local image files for weather visualization
     getWeatherImage(icon_id) {
         if (icon_id < 233) {    //200-232

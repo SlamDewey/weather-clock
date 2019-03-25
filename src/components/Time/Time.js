@@ -58,11 +58,13 @@ class Time extends Component {
         const MM = date.getMonth() + 1, DD = date.getDate(), YYYY = date.getFullYear().toString().padStart(4, '0');
         return (
             <div className="time-container">
-                <div className="time-display">
-                    {this.parse_time()}
-                </div>
-                <div className="date-display">
-                    {MM}/{DD}/{YYYY}
+                <div className="display-container">
+                    <div className="time-display">
+                        {this.parse_time()}
+                    </div>
+                    <div className="date-display">
+                        {MM}/{DD}/{YYYY}
+                    </div>
                 </div>
             </div>
         );

@@ -1,13 +1,17 @@
 .weather-container {
     background-color: blue;
-    padding: 5px;
     width: 40%;
+    height: 100%;
     float: right;
-    margin-right: 5%;
 }
 .weather-attrib {
     background-color: orange;
     margin: 5px;
+}
+.weather-attrib#conditions, .weather-attrib#description {
+    height: 80%;
+    width: 40%;
+    display: block;
 }
 .weather-icon img{
     filter: invert(100%);
