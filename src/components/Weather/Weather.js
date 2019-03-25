@@ -118,8 +118,8 @@ class Weather extends Component {
     
     //map API icon_id to local image files for weather visualization
     getWeatherImage(icon_id) {
-        var hours = (new Date()).getHours();
-        var dn = (hours < 20 && hours > 5)? "d" : "n";
+        var hs = (new Date()).getHours();
+        var dn = (hs < 20 && hs > 5)? "d" : "n";
         if (icon_id < 233) {    //200-232
             return this.MakeImgComponent("weather_img/200-232.svg");
         } else if (icon_id < 322) { //300-321
