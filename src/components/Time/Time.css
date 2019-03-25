@@ -1,10 +1,8 @@
 :root {
-    --time-panel-width: 60%;
+    --time-panel-width: 40%;
 }
 
 .time-container {
-    background-color: yellow;
-
     width: var(--time-panel-width);
     height: 100%;
     float: left;
@@ -15,12 +13,13 @@
     width: var(--time-panel-width);
     position: absolute;
     top: calc(var(--content-height) / 2);
+    color: white;
 }
 .time-display {
-    background-color: red;
+    background-color: #333333;
     font-size: 6em;
 }
 .date-display {
-    background-color: green;
+    background-color: #3f3f3f;
     font-size: 1.5em;
 }

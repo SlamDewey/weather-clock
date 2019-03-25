@@ -54,9 +54,9 @@ class Weather extends Component {
             case "K":
                 return temp;
             case "°F":
-                return ((temp - 273.15) * (9/5) + (32)).toFixed(2);
+                return ((temp - 273.15) * (9/5) + (32)).toFixed(0);
             case "°C":
-                return (temp - 273.15).toFixed(2);
+                return (temp - 273.15).toFixed(0);
             default:
                 return "Invalid Temperature Mode";
         }
@@ -88,25 +88,27 @@ class Weather extends Component {
         }
         return (
             <div className="weather-container">
-                <div className="weather-attrib" id="conditions">
-                    {this.parse_temp(temperature)} {temp_mode}
+                <div className="weather-attrib-container">
+                    <div className="weather-attrib" id="conditions">
+                        <div id="large-font">{this.parse_temp(temperature)}{temp_mode}</div>
+                    </div>
+                    <div className="weather-attrib" id="icon">
+                        {this.getWeatherImage(icon_id)}
+                    </div>
+                    <div className="weather-attrib" id="details">
+                        Humidity: {humidity}% ----- {description}
+                    </div>
                     <br />
-                    Humidity: {humidity}%
-                </div>
-                <div className="weather-attrib" id="description">
-                    {this.getWeatherImage(icon_id)}
-                    <br />
-                    {description}
-                </div>
-                <div className="weather-attrib" id="location">
-                    {city}, {country}
+                    <div className="weather-attrib" id="location">
+                        {city}, {country}
+                    </div>
                 </div>
             </div>
         );
     }
 
     MakeImgComponent(url, alt, width, height) {
-        if (!width || !height) width = height = 100;
+        if (!width || !height) width = height = '100%';
         return (
             <div className="weather-icon">
                 <img src={url} alt={alt} width={width} height={height} />

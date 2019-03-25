@@ -14,4 +14,9 @@ html, body, div#root{
 .content {
     position: relative;
     height: var(--content-height);
+    display: block;
+}
+
+div#large-font {
+    font-size: 9em;
 }

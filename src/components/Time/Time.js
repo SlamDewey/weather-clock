@@ -23,11 +23,11 @@ class Time extends Component {
         var t_str = "";
         switch(time_mode) {
             case "24HR":
-                t_str = h + ":" + m;
+                t_str = h.toString().padStart(2, '0') + ":" + m;
                 break;
             case "12HR":
                 var hours = h % 12;
-                t_str = hours + ":" + m + ((hours !== h) ? "p" : "a");
+                t_str = ((hours === 0) ? 12 : hours) + ":" + m + ((h >= 12) ? "p" : "a");
                 break;
             default:
                 t_str = "Invalid Time Mode";
