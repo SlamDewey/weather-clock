@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import Settings from './pages/Settings/Settings';
@@ -11,26 +12,20 @@ import * as serviceWorker from './serviceWorker';
 
 const root = document.getElementById('root');
 
-const pages = {
-    Home,
-    Settings,
-    Page404
+class App extends Component {
+    render() {
+        return(
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/settings" component={Settings} />
+                    <Route component={Page404} />
+                </Switch>
+            </Router>
+        );
+    }
 }
 
-function renderPage(page) {
-    ReactDOM.render(page, root);
-}
-
-function main() {
-    var url = window.location.href;
-    var comps = url.split("/");
-    var page_request = comps[comps.length - 1].toLowerCase();
-    if (page_request === "" || page_request === "home")
-        renderPage(<pages.Home />);
-    else if (page_request === "settings")
-        renderPage(<pages.Settings />);
-    else renderPage(<pages.Page404 />); 
-}
-main();
+ReactDOM.render(<App /> , root);
 
 serviceWorker.unregister();

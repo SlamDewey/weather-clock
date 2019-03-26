@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Settings.css';
 
-class Page404 extends Component {
+class Settings extends Component {
 
     render() {
         return (
             <div className="settings-content">
-                <a href={"home"}>
+                <a href={"/"}>
                     <div className="back-button">
                         {"<< Go Back"}
                     </div>
@@ -20,4 +20,4 @@ class Page404 extends Component {
 
 }
 
-export default Page404;
+export default Settings;
