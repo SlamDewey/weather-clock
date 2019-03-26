@@ -6,7 +6,7 @@ class Settings extends Component {
     render() {
         return (
             <div className="settings-content">
-                <a href={"/"}>
+                <a href={"/#/"}>
                     <div className="back-button">
                         {"<< Go Back"}
                     </div>

@@ -1,0 +1,26 @@
+:root {
+    --weather-tile-margin: 10px;
+    --weather-tile-border-width: 2px;
+    --weather-tile-bg-color: hsl(225, 29%, 26%);
+    --weather-tile-bd-color: rgb(91, 75, 134);
+    --weather-tile-text-color: white;
+}
+
+.weather-tile {
+    background-color: var(--weather-tile-bg-color);
+    border: solid var(--weather-tile-border-width) var(--weather-tile-bd-color);
+
+    width: calc(33.33% - var(--weather-tile-margin) * 2 - var(--weather-tile-border-width) * 2);
+    height: 100%;
+    margin: var(--weather-tile-margin);
+    padding-top: 10px;
+
+    color: var(--weather-tile-text-color);
+
+    float: left;
+    text-align: center;
+}
+
+.weather-tile img {
+    filter: invert(100%);
+}

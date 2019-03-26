@@ -1,9 +1,14 @@
 .weather-container {
     width: 100%;
     height: 100%;
+    border-left: solid var(--weather-panel-width-border-width) var(--weather-panel-width-border-color);
+    border-bottom: solid var(--weather-panel-width-border-width) var(--weather-panel-width-border-color);
 }
 .weather-attrib {
-    background-color: orange;
+    background-color: rgb(202, 120, 26);
+}
+.weather-tiles-container {
+    width: 100%;
 }
 
 .weather-attrib#temperature {
@@ -23,7 +28,7 @@
     50% {left: 35%;}
     100% {left: 15%;}
 }
-.weather-icon img{
+.weather-attrib#icon img {
     position: relative;
     
     width: 50%;
@@ -34,12 +39,17 @@
     animation-duration: 5s;
     animation-iteration-count: infinite;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1400px) {
     .weather-attrib#temperature {
         font-size: 20vw;
     }
     .weather-attrib#details {
         font-size: 5vw;
+    }
+    .weather-container {
+        border-top: solid var(--weather-panel-width-border-width) var(--weather-panel-width-border-color);
+        border-left: none;
+        border-bottom: solid var(--weather-panel-width-border-width) var(--weather-panel-width-border-color);
     }
 }
 @media screen and (min-width: 1600px) {

@@ -3,7 +3,9 @@
 }
 
 .sbcont {
-    position: relative;
+    position: fixed;
+    top: auto;
+    bottom: 1vh;
     display: inline-block;
     cursor: pointer;
     margin: 15px;
@@ -41,4 +43,12 @@
 .bar3 {
     margin-top: var(--menu-line-spacing);
     margin-bottom: 0px;
+}
+
+@media screen and (max-width: 1400px) {
+    .sbcont{
+        position: fixed;
+        top: 0vh;
+        bottom: auto;
+    }
 }

@@ -8,6 +8,9 @@
 
     --time-panel-width: 60%;
     --weather-panel-width: 40%;
+
+    --weather-panel-width-border-color: rgb(153, 91, 50);
+    --weather-panel-width-border-width: 5px;
 }
 
 html, body, div#root{
@@ -32,16 +35,19 @@ html, body, div#root{
     width: var(--time-panel-width);
 }
 .content-column#weather {
-    width: var(--weather-panel-width);
+    width: calc(var(--weather-panel-width) - var(--weather-panel-width-border-width));
 }
 .content:after {
     content: "";
     display: block;
     clear: both;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1400px) {
     .content-column#time, .content-column#weather{
       width: 100%;
+    }
+    .content {
+        margin-bottom: 50px;
     }
 }
 .bottom-panel {
