@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/weather-clock/static/js/runtime~main.218b16bf.js"
   },
   {
-    "revision": "a2fa1e890982efc4772b",
-    "url": "/weather-clock/static/js/main.d27e1415.chunk.js"
+    "revision": "90511343fba0351fde34",
+    "url": "/weather-clock/static/js/main.140c550d.chunk.js"
   },
   {
     "revision": "03bc3c30b9cb22f54836",
     "url": "/weather-clock/static/js/2.43122aad.chunk.js"
   },
   {
-    "revision": "a2fa1e890982efc4772b",
+    "revision": "90511343fba0351fde34",
     "url": "/weather-clock/static/css/main.a54a117b.chunk.css"
   },
   {
-    "revision": "34aa7594d00f8e6bb4f1b4be674f1df2",
+    "revision": "0b13077dc49dd1ce5b3fdbddda856d81",
     "url": "/weather-clock/index.html"
   }
 ];
