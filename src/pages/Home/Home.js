@@ -27,7 +27,7 @@ class Home extends Component {
                     </div>
                 </div>
                 <div className="bottom-panel">
-                    <SettingsButton href={'settings'}/>
+                    <SettingsButton href={'/settings'}/>
                 </div>
                 <div className="copyright">
                     Copyright {'\u00A9'} 2019 Jared Massa

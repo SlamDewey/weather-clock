@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 import './SettingsButton.css';
 
@@ -14,16 +15,15 @@ class SettingsButton extends Component {
     }
 
     render() {
-        const {onClick, href, target} = this.props;
-        const {container} = this.state;
+        const {href} = this.props;
         return (
-            <a href={href} target={target}>
-                <div className={container} onClick={onClick}>
+            <Link to={href}>
+                <div className="sbcont">
                     <div className="bar1"></div>
                     <div className="bar2"></div>
                     <div className="bar3"></div>
                 </div>
-            </a>
+            </Link>
         );
     }
 
