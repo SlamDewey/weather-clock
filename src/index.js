@@ -15,17 +15,19 @@ const root = document.getElementById('root');
 class App extends Component {
     render() {
         return(
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/settings" component={Settings} />
-                    <Route component={Page404} />
-                </Switch>
-            </Router>
+            <Switch>
+                <Route exact path={'/'} component={Home} />
+                <Route path={'/settings'} component={Settings} />
+                <Route component={Page404} />
+            </Switch>
         );
     }
 }
 
-ReactDOM.render(<App /> , root);
+ReactDOM.render(
+<Router>
+    <App />
+</Router>,
+root);
 
 serviceWorker.unregister();

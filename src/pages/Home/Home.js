@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Weather from '../../components/Weather/Weather';
 import Time from '../../components/Time/Time';
 import SettingsButton from '../../components/SettingsButton/SettingsButton';

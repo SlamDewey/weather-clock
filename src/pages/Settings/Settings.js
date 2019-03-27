@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import {Link} from 'react-router-dom';
+
 import './Settings.css';
 
 class Settings extends Component {
@@ -6,11 +9,11 @@ class Settings extends Component {
     render() {
         return (
             <div className="settings-content">
-                <a href={"/#/"}>
+                <Link to={"/"}>
                     <div className="back-button">
                         {"<< Go Back"}
                     </div>
-                </a>
+                </Link>
                 <div className="options-section">
                 
                 </div>

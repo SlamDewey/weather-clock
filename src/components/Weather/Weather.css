@@ -31,9 +31,6 @@
 .weather-attrib#icon img {
     position: relative;
     
-    width: 50%;
-    height: 50%;
-    
     filter: invert(100%);
     animation-name: icon-motion;
     animation-duration: 5s;

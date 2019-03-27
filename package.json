@@ -2,7 +2,7 @@
   "name": "weather-clock",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://slamdewey.github.io/weather-clock/",
+  "homepage": "https://slamdewey.github.io/weather-clock",
   "dependencies": {
     "domurl": "^2.2.0",
     "gh-pages": "^2.0.1",
