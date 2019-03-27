@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
+
 import config from '../../config.json';
 import './Time.css';
 
@@ -13,7 +15,9 @@ class Time extends Component {
     }
 
     TimeMode() {
-        return config.TimeSettings.SelectedMode;
+        const cookies = new Cookies();
+        var time_mode = cookies.get("time_mode");
+        return (!time_mode) ? config.TimeSettings.DefaultMode : time_mode;
     }
 
     parse_time() {

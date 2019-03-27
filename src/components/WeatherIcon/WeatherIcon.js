@@ -3,8 +3,14 @@ import React, {Component} from 'react';
 class WeatherIcon extends Component {
 
     render() {
-        const {icon, alt, width, height} = this.props;
-        return this.MakeImgComponent(this.getWeatherIconURL(icon), alt, width, height);
+        const {icon, alt, width, height, dn} = this.props;
+        var daynig;
+        if (!this.props.dn) {
+            var hs = (new Date()).getHours();
+            daynig = (hs < 20 && hs > 5)? "d" : "n";
+        }
+        else daynig = dn;
+        return this.MakeImgComponent(this.getWeatherIconURL(icon, daynig), alt, width, height);
     }
     MakeImgComponent(url, alt, width, height) {
         if (!width || !height) width = height = '50%';
@@ -15,9 +21,7 @@ class WeatherIcon extends Component {
         );
     }
     //map API icon_id to local image files for weather visualization
-    getWeatherIconURL(icon_id) {
-        var hs = (new Date()).getHours();
-        var dn = (hs < 20 && hs > 5)? "d" : "n";
+    getWeatherIconURL(icon_id, dn) {
         if (icon_id < 233) {    //200-232
             return "weather_img/200-232.svg";
         } else if (icon_id < 322) { //300-321

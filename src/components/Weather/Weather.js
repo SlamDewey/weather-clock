@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
+
 import config from '../../config.json';
 
 import './Weather.css';
@@ -23,21 +25,23 @@ class Weather extends Component {
             error: "",
             temperature: 0,
             city: "Unknown",
+            country: "Unknown",
             humidity: "Unknown ",
             description: "Unknown ",
             weather_tiles: []
         }
     }
 
-    GetWeatherData(zip, country) {
+    GetWeatherData(lat, lon) {
         //fetch current weather data
-        fetch("https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "," + country +"&appid=" + WEATHER_API_KEY)
+        fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon +"&appid=" + WEATHER_API_KEY)
           .then(res => res.json())
           .then(
               (response) => {
                   this.setState({
                       temperature: response.main.temp,
                       city: response.name,
+                      country: response.sys.country,
                       humidity: response.main.humidity,
                       description: response.weather[0].description,
                       icon_id: response.weather[0].id,
@@ -51,7 +55,7 @@ class Weather extends Component {
               }
           );
         //fetch 7 day forecast data
-        fetch("https://api.openweathermap.org/data/2.5/forecast?zip=" + zip + "," + country +"&appid=" + WEATHER_API_KEY)
+        fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon +"&appid=" + WEATHER_API_KEY)
             .then(res => res.json())
             .then(
                 (response) => {
@@ -75,7 +79,9 @@ class Weather extends Component {
       }
 
     TempMode() {
-        return config.WeatherSettings.SelectedMode;
+        const cookies = new Cookies();
+        var temp_mode = cookies.get("temp_mode");
+        return (!temp_mode) ? config.WeatherSettings.DefaultMode : temp_mode;
     }
 
     parse_temp(temp) {
@@ -95,7 +101,7 @@ class Weather extends Component {
     //setup timer for self-updating
     componentDidMount() {
         //call once then wait
-        this.GetWeatherData(this.props.zip, this.props.country);
+        this.GetWeatherData(this.props.lat, this.props.lon);
         this.timerID = setInterval(
             () => this.tick(),
             1000 * 60 * 10  //10 minutes
@@ -106,16 +112,17 @@ class Weather extends Component {
     }
     //self-update function
     tick() {
-        this.GetWeatherData(this.props.zip, this.props.country);
+        this.GetWeatherData(this.props.lat, this.props.lon);
     }
 
     render() {
         const {error, temperature, city, humidity, description, icon_id} = this.state;
-        const {country} = this.props;
+        const {country} = this.state;
         const {weather_tiles} = this.state;
         const temp_mode = this.TempMode();
         if (error) {
-            return "Error";
+            alert("Error Getting Weather Data!");
+            console.log(error);
         }
         return (
             <div className="weather-container">
@@ -141,7 +148,7 @@ class Weather extends Component {
 
     mapWeatherTiles(weather_tiles) {
         return weather_tiles.map((tile, id) => (
-            <WeatherTile key={id} date={tile.date} low={tile.low} high={tile.high} icon={tile.icon} />
+            <WeatherTile key={id} date={tile.date} low={tile.low} high={tile.high} icon={tile.icon} dn={"d"} />
         ));
     }
 }

@@ -6,8 +6,6 @@ import Home from './pages/Home/Home';
 import Settings from './pages/Settings/Settings';
 import Page404 from './pages/404/404';
 
-import './index.css';
-
 import * as serviceWorker from './serviceWorker';
 
 const root = document.getElementById('root');
@@ -16,9 +14,9 @@ class App extends Component {
     render() {
         return(
             <Switch>
-                <Route exact path={'/'} component={Home} />
-                <Route path={'/settings'} component={Settings} />
-                <Route component={Page404} />
+                <Route exact path={'/'} render={() => <Home />} />
+                <Route path={'/settings'} render={() => <Settings  />} />
+                <Route render={() => <Page404 />} />
             </Switch>
         );
     }

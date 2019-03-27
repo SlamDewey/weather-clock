@@ -1,6 +1,27 @@
-.settings-content a{
-    margin: 0;
-    text-decoration: none;
+:root {
+    --option-button-bg-color: #7777fa;
+    --option-button-selected-bg-color: #48cc48;
+    --option-label-text-color: white;
+}
+
+/* entire container */
+.settings-content {}
+
+.options-section {
+    color: var(--option-label-text-color);
+}
+
+.option-button {
+    background-color: var(--option-button-bg-color);
+    border: none;
+
+    cursor: pointer;
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+.option-button#selected {
+    background-color: var(--option-button-selected-bg-color);
 }
 
 .back-button {

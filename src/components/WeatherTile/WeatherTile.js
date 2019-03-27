@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Cookies from 'universal-cookie';
 
 import config from '../../config.json';
 import WeatherIcon from '../WeatherIcon/WeatherIcon';
@@ -8,7 +9,9 @@ import './WeatherTile.css';
 class WeatherTile extends Component {
 
     TempMode() {
-        return config.WeatherSettings.SelectedMode;
+        const cookies = new Cookies();
+        var temp_mode = cookies.get("temp_mode");
+        return (!temp_mode) ? config.WeatherSettings.DefaultMode : temp_mode;
     }
     parse_temp(temp) {
         const temp_mode = this.TempMode();
@@ -28,7 +31,7 @@ class WeatherTile extends Component {
         return (d.getMonth() + 1) + "/" + (d.getDate()) + "/" + (d.getFullYear());
     }
     render() {
-        const {date, high, low, icon} = this.props;
+        const {date, high, low, icon, dn} = this.props;
         return (
             <div className="weather-tile">
                 <div className="date">
@@ -36,13 +39,13 @@ class WeatherTile extends Component {
                 </div>
                 <div className="temp">
                     <div className="small-temp-text">
-                        {this.parse_temp(low)}
-                        -->
-                        {this.parse_temp(high)}
+                        Lo: {this.parse_temp(low)} {this.TempMode()}
+                        <br />
+                        Hi: {this.parse_temp(high)} {this.TempMode()}
                     </div>
                 </div>
                 <div className="weather-icon">
-                    <WeatherIcon icon={icon} />
+                    <WeatherIcon icon={icon} dn={dn} />
                 </div>
             </div>
         );

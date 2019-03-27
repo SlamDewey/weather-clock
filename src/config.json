@@ -1,15 +1,14 @@
 {
     "WeatherSettings": {
         "TemperatureModes": ["K", "°F", "°C"],
-        "SelectedMode": "°F"
+        "DefaultMode": "°F"
     },
     "TimeSettings": {
         "TimeModes": ["24HR", "12HR"],
-        "SelectedMode": "12HR",
-        "Alarms": [{"h": 9, "m": 0}, {"h": 9, "m": 5}]
+        "DefaultMode": "12HR"
     },
     "LocationSettings": {
-        "Zip": "19031",
-        "Country": "US"
+        "DefaultLatitude": 39.9508061,
+        "DefaultLongitude": -75.15953
     }
 }
