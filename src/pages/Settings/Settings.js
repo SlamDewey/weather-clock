@@ -43,14 +43,26 @@ class Settings extends Component {
     render() {
         return (
             <div className="settings-content">
-                <div className="options-section">
-                    <div className="WeatherSettings">
-                        Temperature Mode: {this.map_buttons(config.WeatherSettings.TemperatureModes, 'temp_mode', this.TempMode())}
-                    </div>
-                    <div className="TimeSettings">
-                        Time Mode: {this.map_buttons(config.TimeSettings.TimeModes, 'time_mode', this.TimeMode())}
-                    </div>
-                </div>
+                <table className="options-section">
+                    <tbody>
+                        <tr className="WeatherSettings">
+                            <td>
+                                Temperature Mode:
+                            </td>
+                            <td>
+                                {this.map_buttons(config.WeatherSettings.TemperatureModes, 'temp_mode', this.TempMode())}
+                            </td>
+                        </tr>
+                        <tr className="TimeSettings">
+                            <td>
+                                Time Mode:
+                            </td>
+                            <td>
+                                {this.map_buttons(config.TimeSettings.TimeModes, 'time_mode', this.TimeMode())}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 <Link to={"/"}>
                     <div className="back-button">
                         {"<< Go Back"}

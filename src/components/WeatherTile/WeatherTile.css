@@ -21,6 +21,15 @@
     text-align: center;
 }
 
+.weather-tile-date {
+    font-weight: bold;
+    font-size: 1.15em;
+}
+.weather-icon-container {
+    width: 75%;
+    padding-left: calc(25% / 2);
+    padding-right: calc(25% / 2);
+}
 .weather-tile img {
     filter: invert(100%);
 }

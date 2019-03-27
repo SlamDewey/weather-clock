@@ -31,20 +31,45 @@ class WeatherTile extends Component {
         return (d.getMonth() + 1) + "/" + (d.getDate()) + "/" + (d.getFullYear());
     }
     render() {
-        const {date, high, low, icon, dn} = this.props;
+        const {date, morn, noon, eve, icon, dn} = this.props;
         return (
             <div className="weather-tile">
-                <div className="date">
+                <div className="weather-tile-date">
                     {this.parse_date(date)}
                 </div>
                 <div className="temp">
                     <div className="small-temp-text">
-                        Lo: {this.parse_temp(low)} {this.TempMode()}
-                        <br />
-                        Hi: {this.parse_temp(high)} {this.TempMode()}
+                        <table style={{margin: 'auto', width: '75%', minWidth: '95px'}}>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        6am:
+                                    </td>
+                                    <td>
+                                        {this.parse_temp(morn)} {this.TempMode()}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        12pm:
+                                    </td>
+                                    <td>
+                                        {this.parse_temp(noon)} {this.TempMode()}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        6pm:
+                                    </td>
+                                    <td>
+                                        {this.parse_temp(eve)} {this.TempMode()}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div className="weather-icon">
+                <div className="weather-icon-container">
                     <WeatherIcon icon={icon} dn={dn} />
                 </div>
             </div>

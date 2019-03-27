@@ -9,16 +9,23 @@
 
 .options-section {
     color: var(--option-label-text-color);
+    width: 80%;
+    margin-left: 10%;
 }
-
+.settings-content table {
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+.settings-content td {
+  border: 1px solid #dddddd;
+  padding: 20px;
+}
 .option-button {
     background-color: var(--option-button-bg-color);
     border: none;
-
     cursor: pointer;
     font-size: 20px;
     padding: 20px;
-    margin: 20px;
 }
 .option-button#selected {
     background-color: var(--option-button-selected-bg-color);

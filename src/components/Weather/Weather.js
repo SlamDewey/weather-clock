@@ -10,10 +10,11 @@ import WeatherIcon from '../WeatherIcon/WeatherIcon';
 const WEATHER_API_KEY = "c1d16b8b18a14269d269f0f4e6b614b8";
 const TILES_TO_DISPLAY = 3;
 
-function weather_tile(date, low, high, icon) {
+function weather_tile(date, morn, noon, eve, icon) {
         this.date = date;
-        this.low = low;
-        this.high = high;
+        this.morn = morn;
+        this.noon = noon;
+        this.eve = eve;
         this.icon = icon;
 }
 
@@ -61,10 +62,10 @@ class Weather extends Component {
                 (response) => {
                     let wt = [];
                     for (var i = 0; i < TILES_TO_DISPLAY; i++) {
-                        var morn = response.list[i*8 + 2];
-                        var noon = response.list[i*8 + 4];
-                        var eve = response.list[i*8 + 6];
-                        wt[i] = new weather_tile(noon.dt_txt, morn.main.temp_min, eve.main.temp_max, noon.weather[0].id);
+                        var morn = response.list[i*8 + 4];
+                        var noon = response.list[i*8 + 6];
+                        var eve = response.list[i*8 + 8];
+                        wt[i] = new weather_tile(noon.dt_txt, morn.main.temp, noon.main.temp, eve.main.temp, noon.weather[0].id);
                     }
                     this.setState({
                         weather_tiles: wt
@@ -148,7 +149,7 @@ class Weather extends Component {
 
     mapWeatherTiles(weather_tiles) {
         return weather_tiles.map((tile, id) => (
-            <WeatherTile key={id} date={tile.date} low={tile.low} high={tile.high} icon={tile.icon} dn={"d"} />
+            <WeatherTile key={id} date={tile.date} morn={tile.morn} noon={tile.noon} eve={tile.eve} icon={tile.icon} dn={"d"} />
         ));
     }
 }
